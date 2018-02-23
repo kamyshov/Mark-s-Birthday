@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en"> <!--<![endif]-->
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Mark's Birthday</title>
+	<meta name="description" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<script type="text/javascript" src="js/jquery.min.1.7.js"></script>
+<script type="text/javascript" src="js/modernizr.2.5.3.min.js"></script>
+	<script src="js/turn.html4.min.js"></script>
+</head>
+<body>
+<!--<div class="header">-->
+	<!--<h2>Welcome to Mark's 1st Birthday Party</h2>-->
+<!--</div>-->
+<div class="flipbook-viewport">
+	<div class="container">
+		<div class="flipbook">
+			<div style="background-image:url(../InvitationCard/pages/1.png)"></div>
+			<div style="background-image:url(../InvitationCard/pages/2.png)"></div>
+		</div>
+	</div>
+</div>
+
+
+<script type="text/javascript">
+
+function loadApp() {
+
+	// Create the flipbook
+
+	$('.flipbook').turn({
+			// Width
+
+			width:922,
+			
+			// Height
+
+			height:600,
+
+			// Elevation
+
+			elevation: 50,
+			
+			// Enable gradients
+
+			gradients: true,
+			
+			// Auto center this flipbook
+
+			autoCenter: true
+
+	});
+}
+
+// Load the HTML4 version if there's not CSS transform
+
+yepnope({
+	test : Modernizr.csstransforms,
+	yep: ['../InvitationCard/js/turn.js'],
+	nope: ['../InvitationCard/js/turn.html4.min.js'],
+	both: ['../InvitationCard/css/basic.css'],
+	complete: loadApp
+});
+
+</script>
+
+</body>
+</html>
